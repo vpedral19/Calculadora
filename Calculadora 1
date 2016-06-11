@@ -1,0 +1,103 @@
+from tkinter import *
+
+def b0():
+    print("0")
+def b1():
+    print("1")
+def b2():
+    print("2")
+def b3():
+    print("3")
+def b4():
+    print("4")
+def b5():
+    print("5")
+def b6():
+    print("6")
+def b7():
+    print("7")
+def b8():
+    print("8")
+def b9():
+    print("9")
+def mais():
+    print("+")
+def menos():
+    print("-")
+def divi():
+    print("/")
+def mult():
+    print("*")
+def resul():
+    print("=")
+def C():
+    print("C")
+def hello():
+    win["bg"] = "#92B5FF"
+def red():
+    win["bg"] = "dark red"
+def black():
+    win["bg"] = "Black"
+def Padrao():
+    print ("Modo Padrão")
+def salvar():
+    print ("Salvando")
+
+
+
+win = Tk()
+win.title("Calculadora - Python")
+#Tamanho da Cal
+win.geometry("350x300+150+150")
+win["bg"] = "#92B5FF"
+
+#Estrutura MENU
+menubar = Menu(win)
+filemenu = Menu(menubar)
+helpmenu = Menu(menubar)
+ajuda = Menu(menubar)
+menubar.add_cascade(label="Arquivo",menu=filemenu)
+menubar.add_cascade(label="Ajuda",menu=filemenu)
+menubar.add_cascade(label="Desenvolvedores",menu=filemenu)
+filemenu.add_command(label="Cor Padrão",command=hello)
+filemenu.add_command(label="Cor Vermelha",command=red)
+filemenu.add_command(label="Cor Preto",command=black)
+filemenu.add_separator()
+filemenu.add_command(label="Exit",command=exit)
+helpmenu.add_command(label="About...",command=hello)
+
+#Estrutura Displey
+D = Entry(win, bd= 5, width = 30)
+D.pack(side=TOP)
+
+
+#Estrutura Butthon
+
+b0 = Button(win, text="0", command= b0, height = 2, width = 5).place(x= 60, y=200)
+b1 = Button(win, text="1", command= b1, height = 2, width = 5).place(x= 60, y=150)
+b2 = Button(win, text="2", command= b2, height = 2, width = 5).place(x= 120, y=150)
+b3 = Button(win, text="3", command= b3, height = 2, width = 5).place(x= 180, y=150)
+b4 = Button(win, text="4", command= b4, height = 2, width = 5).place(x= 60, y=100)
+b5 = Button(win, text="5", command= b5, height = 2, width = 5).place(x= 120, y=100)
+b6 = Button(win, text="6", command= b6, height = 2, width = 5).place(x= 180, y=100)
+b7 = Button(win, text="7", command= b7, height = 2, width = 5).place(x= 60, y=55)
+b8 = Button(win, text="8", command= b8, height = 2, width = 5).place(x= 120, y=55)
+b9 = Button(win, text="9", command= b9, height = 2, width = 5).place(x= 180, y=55)
+soma = Button(win, text="+", command= mais, height = 2, width = 5).place(x= 240, y=200)
+menos = Button(win, text="-", command= menos, height = 2, width = 5).place(x= 240, y=150)
+mult = Button(win, text="*", command= mult, height = 2, width = 5).place(x= 240, y=55)
+divi = Button(win, text="/", command= divi, height = 2, width = 4).place(x= 240, y=100)
+resul = Button(win, text="=", command= resul, height = 2, width = 6).place(x= 150, y=200)
+
+#================== Em Teste no momento ===========================================
+#for b in botao:
+#    a = Button(win, text= b, height = 2, width = 2)
+#    a.pack(side=LEFT)
+#
+#=============================================================
+# menu
+
+win.config(menu=menubar)
+#fim
+
+win.mainloop()
